@@ -4,7 +4,7 @@ var config = {
         user:       'onon1130',         // your database username
         password: '29830814',         // your database password
         port:       3306,         // default MySQL port
-        db:       'oscarondb'         // your database name
+        db:       'esee'         // your database name
     },
     server: {
         port: '80'

@@ -7,10 +7,88 @@ and open the template in the editor.
     Created on : Feb 24, 2019, 10:00:25 PM
     Author     : oscaron
 */
+html {
+  overflow-x: hidden; 
+}
 body {
-  background: #ffffff; 
+  background: #ffffff;
+  font-family: 'Quicksand', sans-serif;
   &.login {
     background:url(../images/bg.png); 
+
   }
 }
 
+.header-logo {
+  background:url(../images/bg.png); 
+  position: relative;
+  padding-top:200px;
+  padding-bottom: 60px;
+  &:after {
+    display: table;
+    content: "";
+    background:url(../images/login-bg.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  span.logo {
+    display: block;
+    height: 150px;
+    background: url(../images/logo.png) ; 
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+.login-form {
+  padding: 10px 40px;
+  fieldset {
+    border: none;
+  }
+  .form-input {
+    position: relative;
+    &:after {
+      display: table;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 40px;
+      width: 30px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &.icon-login {
+      &:after {
+        background-image: url(../images/icon-login.png) ; 
+      }
+    }
+    &.icon-password {
+      &:after {
+        background-image: url(../images/icon-password.png) ; 
+      }
+    }
+  }
+  .form-control {
+    border-radius: 0;
+    border-width: 0 0 1px 0;
+    box-shadow: none;
+    padding-left: 40px;
+    font-size: 18px;
+    height: 40px;
+  }
+  .btn-primary {
+    background: #F8B601;
+      width: 100%;
+    color: #FFFFFF;
+    font-size: 18px;
+    border: none;
+    padding: 15px;
+    &:active {
+      background: #F87B01;
+    }
+  }
+}

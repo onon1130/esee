@@ -15,7 +15,14 @@ var router = express.Router();
 /* GET Customer page. */
  
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'eSee' });
+ req.getConnection(function(err,connection){
+ var query = connection.query('SELECT * FROM member',function(err,rows)
+ {
+ if(err)
+ var errornya  = ("Error Selecting : %s ",err );   
+ req.flash('msg_error', errornya);   
+ res.render('index',{title:"Customers",data:rows});
+ });
+     });
 });
-
 module.exports = router;

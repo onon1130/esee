@@ -164,7 +164,7 @@ body {
   margin: 10px 0;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   height: 20px;
   width: 20px;
   &.icon-arrow-back {
@@ -172,6 +172,28 @@ body {
   }
   &.icon-qr-code {
     background-image: url(../images/icon-qr-code.png) ; 
+  }
+  &.icon-time {
+    background-image: url(../images/icon-time.png) ; 
+  }
+  &.icon-level {
+    background-image: url(../images/icon-level.png) ; 
+  }
+  &.icon-kcal {
+    background-image: url(../images/icon-kcal.png) ; 
+  }
+  &.icon-price {
+    background-image: url(../images/icon-price.png) ; 
+  }
+  &.icon-time {
+    background-image: url(../images/icon-time.png) ; 
+  }
+  &.icon-like {
+    background-image: url(../images/icon-like.png) ; 
+    &.color {
+      background-image: url(../images/icon-like-color.png) ; 
+    }
+
   }
 }
 .member {
@@ -185,7 +207,7 @@ body {
 }
 .section-wrapper {
   clear: both;
-  padding: 10px 0px;
+  padding: 0;
 }    
 .section-title {
   background: #FFBB00;
@@ -224,6 +246,22 @@ body {
     clear: both;
 
   }
+  &.sub-title {
+    background: #EAEAEA;
+    height: 24px;
+
+    span {
+      font-size: 12px;
+
+      line-height: 24px;
+    }
+    &:before {
+      border-bottom: 24px solid transparent;
+      border-right: 24px solid transparent;
+      border-left: 12px solid #EAEAEA;
+      right: -36px;
+    }
+  }
 }
 
 .section-content {
@@ -232,7 +270,7 @@ body {
   font-size: 12px;
   .section-content-desc {
     color: #9E9E9E;
- padding: 0 15px;
+    padding: 0 15px;
   }
   .banner {
     display: block;
@@ -299,8 +337,8 @@ body {
   }
   .promo-cat  {
     font-size: 11px;
-      color: #9E9E9E;
-      text-transform: uppercase;
+    color: #9E9E9E;
+    text-transform: uppercase;
     letter-spacing: 1px;
   }
   .promo-product{
@@ -309,28 +347,109 @@ body {
     span {
       &.promo-product-name{
         text-transform: uppercase;
-    letter-spacing: 1px;
+        letter-spacing: 1px;
       }
-       &.promo-product-price{
+      &.promo-product-price{
         font-size: 16px;
         font-weight: 700;
         padding:0 5px;
-        
+
       }
-       &.promo-product-price-org{
+      &.promo-product-price-org{
         text-decoration: line-through;
       }
-       &.promo-product-unit{
-        
+      &.promo-product-unit{
+
       }
     }
   }
   .product-location {
     span.icon.icon-location {
-      
+
     }
   }
-                 
-                    
+
+
 }
-                
+ul.recipe-list {
+  margin: 0;
+  padding: 10px 15px 5px;
+  li.recipe-list-item {
+    list-style:none;
+    padding-bottom:10px;
+    clear:both;
+    .recipe-image {
+
+      height:130px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid #E8E8E8;
+      margin-bottom: 5px;
+    }
+    .recipe-cat {
+      font-size: 11px;
+      color: #9E9E9E;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .recipe-title {
+      padding-right: 150px;
+      clear:both;
+      span.title-name {
+        font-size: 16px;
+      }
+      a.btn-like {
+        float: right;
+        width: 150px;
+        text-align: right;
+        margin-right: -150px;
+        display: block;
+        span{
+          font-size: 13px;
+          display: block;
+          color: #4c4c4c;
+          line-height: 16px;
+          float:right;
+          &.icon {
+            margin:0 0 0 2px;
+            height:14px;
+            width:16px;
+            line-height: 14px;
+          }
+
+        }
+      }
+    }
+    .recipe-details {
+      clear:both;
+      padding: 5px 0;
+      height: 20px;
+      .recipe-details-item {
+        float: left;
+        display: block;
+        padding-left: 18px;
+        margin-right: 10px;
+        span {
+          display: block;
+          padding: 0 5px;
+          line-height: 18px;
+          float:left;
+          &.icon {
+            line-height: 16px;
+            display: block;
+            padding:0;
+            margin:0;
+            margin-left: -16px;
+            float:left;
+
+            height:16px;
+            width:16px;
+          }
+        }
+      }
+    }
+
+  }
+}
+

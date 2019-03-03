@@ -9,6 +9,17 @@ $(document).ready(function () {
       console.log('please enter username password');
     }
   });
+  
+ 
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+
 });
 function loginAction(username, password) {
   var usernameQuery = {"username": username};

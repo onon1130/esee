@@ -38,7 +38,8 @@ var dbOptions = {
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var usersLogin = require('./routes/login');
+var loginRouter = require('./routes/login');
+var homeRouter = require('./routes/home');
 
 var app = express();
 app.use(myConnection(mysql, dbOptions, 'pool'));
@@ -69,7 +70,8 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/login', usersLogin);
+app.use('/login', loginRouter);
+app.use('/home', homeRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

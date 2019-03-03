@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
  if(err)
  var errornya  = ("Error Selecting : %s ",err );   
  req.flash('msg_error', errornya);   
- res.render('index',{title:"Customers",data:rows});
+ res.render('home',{title:"Customers",data:rows});
  });
      });
 });

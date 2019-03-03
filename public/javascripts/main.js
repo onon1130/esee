@@ -3,10 +3,7 @@ $(document).ready(function () {
     e.preventDefault();
     var username = $('#username').val();
     var password = $('#password').val();
-    console.log('username:' + username);
-    console.log('password:' + password);
     if (username && password) {
-      console.log('not null');
       loginAction(username, password);
     } else {
       console.log('please enter username password');
@@ -14,16 +11,11 @@ $(document).ready(function () {
   });
 });
 function loginAction(username, password) {
-  ///login/validate
-  console.log('check username password');
   var usernameQuery = {"username": username};
   var passwordQuery = {"password": password};
-  console.log('usernameQuery' + usernameQuery);
-  console.log('passwordQuery' + passwordQuery);
   var query = {};
 // Empty content string
   $.extend(query, usernameQuery, passwordQuery);
-  console.log('query:' + query);
   var url = '/login/validate';
   $.ajax({
     type: 'POST',
@@ -31,22 +23,13 @@ function loginAction(username, password) {
     url: url,
     dataType: 'JSON'
   }).done(function (data) {
-    console.log('data:' + data.length);
-
-    
-
-      $.each(data, function () {
-        console.log('msg:' + this.member_name);
-        $(location).attr('href','/home');
-      });
-      
-
-
-  })
-          .fail (function (msg) {
-          
-      console.log('no user');
-   
+    $('.login-form').find('.error-msg').hide();
+    $.each(data, function () {
+      $(location).attr('href', '/home');
+    });
+  }).fail(function (msg) {
+    $('.login-form').find('.error-msg').show();
+    //console.log('no user');
   });
 
 }

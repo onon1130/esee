@@ -4,20 +4,5 @@ block content
   div 
     span logo
     table
-      for row, index in data 
-        tr
-          td #{index+1}
-          td #{row.member_id}
-          td #{row.member_name}
-          td #{row.member_email}
-          td #{row.status}
-          td
-            div(style='display:inline-block')
-              a(href='/customers/edit/#{row.id}').btn.btn-sm.btn-primary
-                i.fa.fa-edit
-            | 
-            div(style='display:inline-block')
-              form(method='post', action='/customers/delete/#{row.id}')
-                input(type="hidden",name="_method", value="DELETE")
-                button.btn.btn-sm.btn-danger(type='submit')
-                  i.fa.fa-remove
+      tr 
+      td #{data}

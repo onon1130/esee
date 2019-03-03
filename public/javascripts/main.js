@@ -37,35 +37,11 @@ function loginAction(username, password) {
 
       $.each(data, function () {
         console.log('msg:' + this.member_name);
+        $(location).attr('href','/home');
       });
-  
+      
 
-//    $.each(data, function () {
-//      hasEnrolled = false;
-//      var thisID = this.studentID;
-//      tableContent += '<tr>';
-//      tableContent += '<td>' + this.studentID + '</td>';
-//      tableContent += '<td><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ' + this.studentName + '</td>';
-//      tableContent += '<td>' + formatDate(this.dob) + '</td>';
-//      if (this.enrolled && this.enrolled.length > 0) {
-//
-//        $.each(this.enrolled, function () {
-//          var thisEnroll = [];
-//          thisEnroll = this;
-//          if (((thisEnroll.year === year) && (thisEnroll.CourseID === courseID))) {
-//            hasEnrolled = true;
-//          }
-//        });
-//      }
-//      if (hasEnrolled) {
-//        tableContent += '<td></td>';
-//      } else {
-//        tableContent += '<td><button type="button" class="btn btn-primary studentEnrollCourse" data-studentID="' + thisID + '">Enroll</button></td>';
-//      }
-//      tableContent += '</tr>';
-//    });
-//    $('#searchStudentResult').fadeIn();
-//    $('#searchStudentResult table tbody').html(tableContent);
+
   })
           .fail (function (msg) {
           

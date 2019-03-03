@@ -87,6 +87,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-app.listen(3000, function () {
-console.log("Express server listening on port 80");
+app.listen(config.server.port, function () {
+console.log("Express server listening on port"+config.server.port );
 });

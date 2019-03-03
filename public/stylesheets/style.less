@@ -143,22 +143,7 @@ body {
   text-align: center;
   line-height: 40px;
 }
-.footer {
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  bottom: 0;
-  /*  border:1px solid #bababa;
-    border-width: 1px 0 0;*/
-  height:80px;
-  background: #fff;
-  box-shadow: 0px 0px 10px #666; 
-  .container {
-    padding-top: 0;
-    padding-bottom:0;
-  }
-}
+
 .icon {
   display: inline-block; 
   margin: 10px 0;
@@ -193,7 +178,71 @@ body {
     &.color {
       background-image: url(../images/icon-like-color.png) ; 
     }
+  }
+  &.icon-home {
+    background-image: url(../images/icon-home.png) ; 
+    .active & {
+      background-image: url(../images/icon-home-color.png) ; 
+    }
+  }
+  &.icon-search {
+    background-image: url(../images/icon-search.png) ; 
+    .active & {
+      background-image: url(../images/icon-search-color.png) ; 
+    }
+  }
+  &.icon-recipe {
+    background-image: url(../images/icon-recipe.png) ; 
+    .active & {
+      background-image: url(../images/icon-recipe-color.png) ; 
+    }
+  }
+  &.icon-profile {
+    background-image: url(../images/icon-profile.png) ; 
+    .active & {
+      background-image: url(../images/icon-profile-color.png) ; 
+    }
+  }
+}
+.footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  bottom: 0;
+  /*  border:1px solid #bababa;
+    border-width: 1px 0 0;*/
+  height:80px;
+  background: #fff;
+  box-shadow: 0px 0px 10px #666; 
+  .container {
+    padding-top: 0;
+    padding-bottom:0;
+  }
+  .footer-menu {
+    padding-top:10px;
+  }
+  .footer-menu-item {
+    width:25%;
+    float: left;
 
+    a {
+      margin: 0 20px;
+      display: block;
+      text-align: center;
+      &.active {
+        border-bottom: 4px solid #E1AF00;
+      }
+      span {
+
+        &.icon {
+
+
+          height:22px;
+          width:22px;
+        }
+      }
+    }
   }
 }
 .member {
@@ -429,6 +478,7 @@ ul.recipe-list {
         float: left;
         display: block;
         padding-left: 18px;
+        min-width: 20%;
         margin-right: 10px;
         span {
           display: block;

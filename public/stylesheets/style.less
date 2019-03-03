@@ -227,16 +227,16 @@ body {
 }
 
 .section-content {
-  padding: 5px 15px;
+  padding: 5px 0;
   clear: both;
   font-size: 12px;
   .section-content-desc {
     color: #9E9E9E;
-
+ padding: 0 15px;
   }
   .banner {
     display: block;
-    margin: 5px -15px;
+    margin: 5px 0;
     height: 180px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -254,14 +254,16 @@ body {
   }
 }
 .swiper-container {
+  padding-left:15px;
   width: 100%;
   height: 100%;
+  margin-top: 10px;
 }
 .swiper-slide {
   text-align: left;
   font-size: 12px;
   background: #fff;
-  width: 80%;
+  width: 55%;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -275,7 +277,7 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  height: 170px;
+  height: 200px;
 }
 .swiper-slide:nth-child(2n) {
   width: 60%;
@@ -283,3 +285,52 @@ body {
 .swiper-slide:nth-child(3n) {
   width: 40%;
 }
+.promo-content {
+  height:200px;
+  width: 100%;
+  .promo-image {
+    width:200px;
+    height:130px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #E8E8E8;
+    margin-bottom: 5px;
+  }
+  .promo-cat  {
+    font-size: 11px;
+      color: #9E9E9E;
+      text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .promo-product{
+    font-size: 12px;
+    line-height:1;
+    span {
+      &.promo-product-name{
+        text-transform: uppercase;
+    letter-spacing: 1px;
+      }
+       &.promo-product-price{
+        font-size: 16px;
+        font-weight: 700;
+        padding:0 5px;
+        
+      }
+       &.promo-product-price-org{
+        text-decoration: line-through;
+      }
+       &.promo-product-unit{
+        
+      }
+    }
+  }
+  .product-location {
+    span.icon.icon-location {
+      
+    }
+  }
+                 
+                    
+}
+                

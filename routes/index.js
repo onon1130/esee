@@ -18,5 +18,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'eSee' });
   req.session.destroy();
 });
-
+router.get('/scan', function(req, res, next) {
+  res.render('scan', { title: 'eSee' });
+  req.session.destroy();
+});
 module.exports = router;

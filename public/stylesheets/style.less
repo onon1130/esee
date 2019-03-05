@@ -108,6 +108,7 @@ body {
   border-color: #FFF;
   height: 100px;
   background: #FFF;
+  padding-top: constant(safe-area-inset-top);
   .container {
     padding-top: 0;
     padding-bottom:0;
@@ -126,6 +127,12 @@ body {
     }
   }
 }
+@supports (constant(safe-area-inset-top)) { 
+  .navbar-fixed-top {
+    /* Status bar height on iOS 11+ */ padding-top: constant(safe-area-inset-top); 
+  } 
+}
+
 
 .nav-left-action {
   width: 40px; 

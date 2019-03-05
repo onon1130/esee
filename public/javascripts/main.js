@@ -1,4 +1,7 @@
 $(document).ready(function () {
+   $(document.body).on('click', '#btn-logout', function (e) {
+     $(location).attr('href', '/');
+   });
   $(document.body).on('click', '#login', function (e) {
     e.preventDefault();
     var username = $('#username').val();

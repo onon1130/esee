@@ -2,6 +2,10 @@ $(document).ready(function () {
    $(document.body).on('click', '#btn-logout', function (e) {
      $(location).attr('href', '/');
    });
+    $(document.body).on('click', '#btn-scan-qrcode', function (e) {
+     $(location).attr('href', '/scan');
+   });
+   
   $(document.body).on('click', '#login', function (e) {
     e.preventDefault();
     var username = $('#username').val();

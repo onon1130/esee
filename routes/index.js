@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
   req.session.destroy();
 });
 router.get('/scan', function(req, res, next) {
-  res.render('scan', { title: 'eSee' });
-  req.session.destroy();
+  res.render('scan', { title: 'Scan QR code' });
 });
 module.exports = router;

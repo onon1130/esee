@@ -1,0 +1,16 @@
+extends layout-scan
+
+block content
+  include header.jade
+  .container
+
+  a#githubLink(href='https://github.com/cozmo/jsQR') View documentation on Github
+  
+  #loadingMessage Unable to access video stream (please make sure you have a webcam enabled)
+  canvas#canvas(hidden)
+  #output(hidden)
+    #outputMessage
+    div(hidden)
+      b Data:
+      span#outputData
+  include footer.jade

@@ -11,13 +11,14 @@ router.post('/validate', function (request, response, next) {
   var username = request.body.username;
   var password = request.body.password;
   request.getConnection(function (err, connection) {
-    var query = connection.query('SELECT * FROM member WHERE member_email = ? AND password = ?', [username, password], function (err, rows) {
+    var query = connection.query('SELECT member_name FROM member WHERE username = ? AND password = ?', [username, password], function (err, rows) {
       if (err) {
         response.send('Incorrect Username and/or Password!');
       } else {
         if (rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
+          request.session.member_name = rows[0].member_name;
           //response.redirect('/home');
           response.send(rows);
         } else {

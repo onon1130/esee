@@ -1,11 +1,15 @@
 $(document).ready(function () {
-   $(document.body).on('click', '#btn-logout', function (e) {
-     $(location).attr('href', '/');
-   });
-    $(document.body).on('click', '#btn-scan-qrcode', function (e) {
-     $(location).attr('href', '/scan');
-   });
-   
+  $(document.body).on('click', '#btn-logout', function (e) {
+    $(location).attr('href', '/');
+  });
+  $(document.body).on('change', '.qrcode-text', function (e) {
+    //$(location).attr('href', '/scan');
+    // e.preventDefault();
+//     $('#scanCamera').change();
+    console.log('code:' + $this.val());
+    alert('code:' + $this.val());
+  });
+
   $(document.body).on('click', '#login', function (e) {
     e.preventDefault();
     var username = $('#username').val();
@@ -16,16 +20,21 @@ $(document).ready(function () {
       console.log('please enter username password');
     }
   });
-  
- 
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
-    });
+
+
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+
+
+
+
+
 
 });
 function loginAction(username, password) {

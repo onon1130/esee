@@ -26,7 +26,7 @@ var router = express.Router();
 
 router.get('/', function (request, response, next) {
   if (request.session.loggedin) {
-    response.render('home', {title: "Home", data: request.session.username});
+    response.render('home', {title: "Home", data: request.session.member_name});
   } else {
     response.render('home', {title: "Home", data: 'Guest'});
   }

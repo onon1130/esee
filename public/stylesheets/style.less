@@ -509,8 +509,81 @@ ul.recipe-list {
 
   }
 }
+#scan-item, #qr-code {
+  input, label {
+    vertical-align:middle
+  }
+  .qrcode-text, .btn-go {
+    padding-right:1.7em; 
+    margin-right:0;
+    position:absolute; 
+    overflow:hidden; 
+    width:1px; 
+    height:1px; 
+    opacity:0;
 
-input, label {vertical-align:middle}
-.qrcode-text {padding-right:1.7em; margin-right:0}
-.qrcode-text-btn {display:inline-block; background: url(../images/icon-qr-code.png)  50% 50% no-repeat; background-size: cover;  height:30px; width:30px; margin-left:20px; cursor:pointer}
-.qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+  }
+  .qrcode-text-btn {
+    display:inline-block; 
+    background: url(../images/icon-qr-code.png)  50% 50% no-repeat; 
+    background-size: cover;  
+    height:30px; 
+    width:30px; 
+    margin-left:20px; 
+    cursor:pointer;
+    > input[type=file] {
+      position:absolute; 
+      overflow:hidden; 
+      width:1px; 
+      height:1px; 
+      opacity:0
+
+    }
+  }
+}
+#qr-code {
+  .qrcode-text-btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    height: 180px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/banner-qr-code.png) ; 
+  }
+}
+/*#githubLink {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    color: #2D99FF;
+  }
+  h1 {
+    margin: 10px 0;
+    font-size: 40px;
+  }
+  #loadingMessage {
+    text-align: center;
+    padding: 40px;
+    background-color: #eee;
+  }
+  #canvas {
+    width: 100%;
+  }
+  #output {
+    margin-top: 20px;
+    background: #eee;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+  #output div {
+    padding-bottom: 10px;
+    word-wrap: break-word;
+  }
+  #noQRFound {
+    text-align: center;
+  }*/
+
+#product-item {
+  display: none;
+}

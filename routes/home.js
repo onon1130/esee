@@ -26,17 +26,30 @@ var router = express.Router();
 
 router.get('/', function (request, response, next) {
   if (request.session.loggedin) {
-    response.render('home', {title: "Home", data: request.session.member_name});
+    var displayName = request.session.member_name;
   } else {
-    response.render('home', {title: "Home", data: 'Guest'});
+    var displayName = 'Guest';
   }
-//  request.getConnection(function (err, connection) {
-//    var query = connection.query('SELECT * FROM member', function (err, rows) {
-//      if (err)
-//        var errornya = ("Error Selecting : %s ", err);
-//      request.flash('msg_error', errornya);
-//      response.render('home', {title: "Customers", data: rows});
-//    });
-//  });
+  var promoRow = {};
+  var recipeRow = {};
+  request.getConnection(function (err, connection) {
+    var query = connection.query('SELECT product_promo.product_ID, product.product_name, product.unit_price, product_promo.promo_price, product.qty_per_unit, product_cat.product_cat_name FROM product_promo INNER JOIN product ON product_promo.product_ID=product.product_ID INNER JOIN product_cat ON product_cat.product_cat_ID=product.product_cat_ID', function (err, rows) {
+      if (err)
+        var errornya = ("Error Selecting : %s ", err);
+      request.flash('msg_error', errornya);
+      promoRow = rows;
+      // response.render('home', {title: "Home", promoData: promoRow, recipeData: recipeRow, memberName: displayName});
+    });
+    var query2 = connection.query('SELECT * from recipe INNER JOIN recipe_cat ON recipe_cat.recipe_cat_ID=recipe.recipe_cat_ID order by recipe.likes desc LIMIT 5', function (err, rows) {
+      if (err)
+        var errornya = ("Error Selecting : %s ", err);
+      request.flash('msg_error', errornya);
+      recipeRow = rows;
+      response.render('home', {title: "Home", promoData: promoRow, recipeData: recipeRow, memberName: displayName});
+    });
+
+
+  });
+
 });
 module.exports = router;

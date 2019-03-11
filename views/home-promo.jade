@@ -5,42 +5,61 @@
   .section-content
     .section-content-desc
       span Check the items on bargained price
+    //      
+    //for row, index in promoData 
+    //        tr
+    //          td #{index+1}
+    //          td #{row.member_id}
+    //          td #{row.member_name}
+    //          td #{row.member_email}
+    //          td #{row.status}
+    //          td
+    //            div(style='display:inline-block')
+    //              a(href='/customers/edit/#{row.id}').btn.btn-sm.btn-primary
+    //                i.fa.fa-edit
+    //            | 
+    //            div(style='display:inline-block')
+    //              form(method='post', action='/customers/delete/#{row.id}')
+    //                input(type="hidden",name="_method", value="DELETE")
+    //                button.btn.btn-sm.btn-da
+    
     .swiper-container
       .swiper-wrapper
-        .swiper-slide 
-          .promo-content
-            .promo-image(style='background-image: url(../images/pic-promo-3.png);')
-            .promo-cat Fruits
-            .promo-product
-              span.promo-product-name Avocado
-              span.promo-product-price $24
-              span.promo-product-price-org $28
-              span.promo-product-unit /ea
-            .product-location
-              a(href='#')
-                span.icon.icon-location
-        .swiper-slide 
-          .promo-content
-            .promo-image(style='background-image: url(../images/pic-promo-1.png);')
-            .promo-cat Fresh meat
-            .promo-product
-              span.promo-product-name Kobe beef
-              span.promo-product-price $50
-              span.promo-product-price-org $80
-              span.promo-product-unit /g
-            .product-location
-              a(href='#')
-                span.icon.icon-location
-        .swiper-slide 
-          .promo-content
-            .promo-image(style='background-image: url(../images/pic-promo-2.png);')
-            .promo-cat Fruits
-            .promo-product
-              span.promo-product-name Fuji apple
-              span.promo-product-price $12
-              span.promo-product-price-org $18
-              span.promo-product-unit /ea
-            .product-location
-              a(href='#')
-                span.icon.icon-location
+        for row, index in promoData 
+          .swiper-slide 
+            .promo-content
+              a.promo-image(href='#', data-product-id='#{row.product_ID}',style='background-image: url(../images/product/#{row.product_ID}.png);')
+              .promo-cat #{row.product_cat_name}
+              a.promo-product(href='#', data-product-id='#{row.product_ID}')
+                span.promo-product-name #{row.product_name}
+                span.promo-product-price $#{row.promo_price}
+                span.promo-product-price-org $#{row.unit_price}
+                span.promo-product-unit /#{row.qty_per_unit}
+              .product-location
+                div
+                  span.icon.icon-location
+      //        .swiper-slide 
+      //          .promo-content
+      //            .promo-image(style='background-image: url(../images/pic-promo-1.png);')
+      //            .promo-cat Fresh meat
+      //            .promo-product
+      //              span.promo-product-name Kobe beef
+      //              span.promo-product-price $50
+      //              span.promo-product-price-org $80
+      //              span.promo-product-unit /g
+      //            .product-location
+      //              a(href='#', data-product-id='2')
+      //                span.icon.icon-location
+      //        .swiper-slide 
+      //          .promo-content
+      //            .promo-image(style='background-image: url(../images/pic-promo-2.png);')
+      //            .promo-cat Fruits
+      //            .promo-product
+      //              span.promo-product-name Fuji apple
+      //              span.promo-product-price $12
+      //              span.promo-product-price-org $18
+      //              span.promo-product-unit /ea
+      //            .product-location
+      //              a(href='#', data-product-id='3')
+      //                span.icon.icon-location
       .swiper-pagination

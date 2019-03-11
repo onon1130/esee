@@ -24,6 +24,10 @@ $(document).ready(function () {
 
   var swiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
+    autoplay: {
+    delay: 5000
+  },
+  //loop: true,
     spaceBetween: 10,
     pagination: {
       el: '.swiper-pagination',

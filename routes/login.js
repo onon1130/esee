@@ -19,7 +19,6 @@ router.post('/validate', function (request, response, next) {
           request.session.loggedin = true;
           request.session.username = username;
           request.session.member_name = rows[0].member_name;
-          //response.redirect('/home');
           response.send(rows);
         } else {
           response.send('Incorrect Username and/or Password!');

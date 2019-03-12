@@ -1,0 +1,8 @@
+{
+  "name": "eSee Cook for Well fresh supermarket",
+  "short_name": "eSee Cook",
+  "description": "cook what you see, it's easy to cook",
+  "version": "0.0.0.18",
+  "display": "fullscreen",
+  "manifest_version": 2
+}

@@ -1,3 +1,9 @@
+$(window).load(function () {
+  setTimeout(function () {
+    window.scrollTo(100,0);
+   // alert('top la');
+  }, 1000);
+});
 $(document).ready(function () {
   $(document.body).on('click', '#btn-logout', function (e) {
     $(location).attr('href', '/');
@@ -25,9 +31,9 @@ $(document).ready(function () {
   var swiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
     autoplay: {
-    delay: 5000
-  },
-  //loop: true,
+      delay: 5000
+    },
+    //loop: true,
     spaceBetween: 10,
     pagination: {
       el: '.swiper-pagination',

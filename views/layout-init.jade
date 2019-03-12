@@ -6,10 +6,16 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0, viewport-fit=cover')
     meta(name='description', content='')
     meta(name='author', content='')
+    meta(name='apple-mobile-web-app-title', content='eSee Cook')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Quicksand')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/swiper.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='apple-touch-icon', href='../images/favicon.png')
+    link(rel='manifest' href='/manifest.json')
+    link(rel='apple-touch-startup-image', href='/images/launch.png',media='(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)')
   body
     block content
     script(src='/javascripts/jquery.min.js')

@@ -1,4 +1,4 @@
-extends layout-init
+extends layout
 
 block content
   div.header-logo
@@ -17,5 +17,13 @@ block content
         span Incorrect username or password.
       .form-group.form-action
         button#login.btn.btn-primary Sign In
-    
+      .form-group.forgot-password
+        a(href='#') Forgot password?
+  .signup-wrapper 
+    .signup-link
+      span Don’t have an account? 
+      a(href='#') SIGN UP 
+    .guest-link
+      span or 
+      a(href='#') Continus as a GUEST  
    

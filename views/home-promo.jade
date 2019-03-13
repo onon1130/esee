@@ -28,9 +28,9 @@
         for row, index in promoData 
           .swiper-slide 
             .promo-content
-              a.promo-image(href='#', data-product-id='#{row.product_ID}',style='background-image: url(../images/product/#{row.product_ID}.png);')
+              a.promo-image.btn-product-item(href='#', data-product-id='#{row.product_ID}',style='background-image: url(../images/product/#{row.product_ID}.png);')
               .promo-cat #{row.product_cat_name}
-              a.promo-product(href='#', data-product-id='#{row.product_ID}')
+              a.promo-product.btn-product-item(href='#', data-product-id='#{row.product_ID}')
                 span.promo-product-name #{row.product_name}
                 span.promo-product-price $#{row.promo_price}
                 span.promo-product-price-org $#{row.unit_price}

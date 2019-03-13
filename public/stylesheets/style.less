@@ -26,7 +26,7 @@ a {
 .header-logo {
   background:url(../images/bg.png); 
   background-repeat: no-repeat;
-    background-size: cover;
+  background-size: cover;
   position: relative;
   padding-top:180px;
   padding-bottom: 60px;
@@ -119,8 +119,8 @@ a {
     }
   }
 } 
-    
-    
+
+
 .container {
 
   padding: 50px 0 80px 0;
@@ -475,8 +475,8 @@ ul.recipe-list {
       padding-right: 150px;
       clear:both;
       .title-name {
-       // float: left;
-      //  display:block;
+        // float: left;
+        //  display:block;
         font-size: 16px;
       }
       .btn-like {
@@ -576,38 +576,156 @@ ul.recipe-list {
     background-image: url(../images/banner-qr-code.png) ; 
   }
 }
-/*#githubLink {
-    position: absolute;
-    right: 0;
-    top: 12px;
-    color: #2D99FF;
-  }
-  h1 {
-    margin: 10px 0;
-    font-size: 40px;
-  }
-  #loadingMessage {
-    text-align: center;
-    padding: 40px;
-    background-color: #eee;
-  }
-  #canvas {
-    width: 100%;
-  }
-  #output {
-    margin-top: 20px;
-    background: #eee;
-    padding: 10px;
-    padding-bottom: 0;
-  }
-  #output div {
-    padding-bottom: 10px;
-    word-wrap: break-word;
-  }
-  #noQRFound {
-    text-align: center;
-  }*/
+
 
 #product-item {
   display: none;
+
+
+}
+#product-item-info {
+  display: block;
+  clear: both;
+  margin-bottom: 20px;
+  .product-photo {
+    display: block;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .product-detail {
+    display: table;
+    width: 100%;
+    clear: both;
+    padding: 10px 120px 10px 0;
+  }
+  .product-detail-basic {
+    padding: 0 10px 5px;
+    display: block;
+    float: left;
+    width: 100%;
+    .product-cat {
+      font-size: 11px;
+      color: #9E9E9E;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      clear: both;
+    }
+    .product-name {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      clear: both;
+    }
+    .product-price  {
+      height: 20px;
+      display: block;
+      clear: both;
+      padding-left:20px;
+      background-repeat: no-repeat;
+      background-image: url(../images/icon-price.png) ; 
+      background-position: 2px 2px;
+      background-size: 18px auto;
+      font-size: 16px;
+      .price {
+
+        font-weight: 700;
+        padding:0 5px;
+      } 
+      .price-ori {
+        font-size:14px;
+        text-decoration: line-through;
+      }
+      .price-unit {
+        font-size:14px;
+      }
+
+    }
+  }
+  .product-detail-sub {
+    display: block;
+    float: left;
+    width: 120px;
+    margin-right: -120px;
+    padding: 20px 10px 5px;
+
+    .product-kcal  {
+      float: right;
+      height: 20px;
+      padding-left:20px;
+      background-repeat: no-repeat;
+      background-image: url(../images/icon-kcal.png) ; 
+      background-position: top left;
+      background-size:  auto 18px;
+    }
+
+    .product-place {
+      float: right;
+      height: 20px;
+      padding-left:20px;
+      background-repeat: no-repeat;
+      background-image: url(../images/icon-worldwide.png) ; 
+      background-position: top left;
+      background-size:  auto 18px;
+    }
+  }
+}
+
+.section-tab {
+  display: block;
+  clear: both;
+  padding: 10px 15px;
+  a {
+    display: block;
+    text-align: center;
+    color: #4A4A4A;
+    font-size: 16px;
+    width: 30%;
+    margin-right: 15px;
+    float: left;
+    line-height:17px;
+    padding: 10px 0;
+    border-bottom: 1px solid #D2D2D2;
+    &.active {
+      font-weight: 700;
+      color: #9E7B00;
+      border-bottom: 4px solid #E1AF00;
+    }
+  }
+}
+   
+
+#githubLink {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  color: #2D99FF;
+}
+h1 {
+  margin: 10px 0;
+  font-size: 40px;
+}
+#loadingMessage {
+  text-align: center;
+  padding: 40px;
+  background-color: #eee;
+}
+#canvas {
+  width: 100%;
+}
+#output {
+  margin-top: 20px;
+  background: #eee;
+  padding: 10px;
+  padding-bottom: 0;
+}
+#output div {
+  padding-bottom: 10px;
+  word-wrap: break-word;
+}
+#noQRFound {
+  text-align: center;
 }

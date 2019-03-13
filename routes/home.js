@@ -52,4 +52,31 @@ router.get('/', function (request, response, next) {
   });
 
 });
+
+/* GET productinfo. */
+router.post('/productinfo', function (req, res) {
+  var getQuery = req.body;
+  var productID = getQuery.productID;
+  req.getConnection(function (err, connection) {
+    var query = connection.query('SELECT product_promo.product_ID, product.product_name, product.unit_price, product_promo.promo_price, product.qty_per_unit,product.from, product_cat.product_cat_name FROM product_promo INNER JOIN product ON product_promo.product_ID=product.product_ID INNER JOIN product_cat ON product_cat.product_cat_ID=product.product_cat_ID WHERE product.product_ID="'+productID+'"', function (err, rows) {
+    if (err)
+      return err;
+    res.send(rows);
+    });
+  });
+});
+/* GET productrecipe. */
+router.post('/productinfo', function (req, res) {
+  var getQuery = req.body;
+  var productID = getQuery.productID;
+  req.getConnection(function (err, connection) {
+    var query = connection.query('SELECT * from recipe INNER JOIN recipe_cat ON recipe_cat.recipe_cat_ID=recipe.recipe_cat_ID order by recipe.likes desc LIMIT 5', function (err, rows) {
+    if (err)
+      return err;
+    res.send(rows);
+    });
+  });
+});
+
+
 module.exports = router;

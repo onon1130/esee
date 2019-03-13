@@ -1,2 +1,23 @@
 
-include recipe-list.jade
+#product-item-info
+  .product-photo
+  .product-detail
+    .product-detail-basic
+      .product-cat Fruits
+      .product-name AVOCADO
+      .product-price 
+        span.price $
+          span.amount
+        span.price-ori 
+          span.amount
+        span.price-unit / 
+          span.unit
+    .product-detail-sub
+      //.product-kcal 
+        span.unit 360
+        span kcal
+      .product-place 
+        span.unit 
+    div
+#product-item-recipe-list  
+  include recipe-list-product.jade

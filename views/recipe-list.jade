@@ -5,23 +5,23 @@
     ul.recipe-list
       for row, index in recipeData 
         li.recipe-list-item
-          a.recipe-image(href='#', data-recipe-id='#{row.recipe_ID}',style='background-image: url(../images/recipe/#{row.recipe_ID}.png);')
+          a.recipe-image.btn-recipe-detail(href='#', data-back-to='home', data-recipe-id='#{row.recipe_ID}',style='background-image: url(../images/recipe/#{row.recipe_ID}.png);')
           .recipe-cat #{row.recipe_cat_title}
           .recipe-title 
-            a.title-name.btn-recipe-title(href='#', data-recipe-id='#{row.recipe_ID}') #{row.recipe_title}
+            a.title-name.btn-recipe-title.btn-recipe-detail(href='#', data-back-to='home', data-recipe-id='#{row.recipe_ID}') #{row.recipe_title}
             span.btn-like
               span.icon.icon-like.color
-              span #{row.likes}
+              span.content #{row.likes}
           .recipe-details
-            .recipe-details-item 
+            .recipe-details-item.time
               span.icon.icon-time
-              span #{row.duration}
-            .recipe-details-item
+              span.content #{row.duration}
+            .recipe-details-item.level
               span.icon.icon-level
-              span #{row.level}
-            .recipe-details-item 
+              span.content #{row.level}
+            .recipe-details-item.kcal
               span.icon.icon-kcal
-              span #{row.engry_total}kcal
+              span.content #{row.engry_total}kcal
             .recipe-details-item
               span.icon.icon-price
-              span $--
+              span.content $--

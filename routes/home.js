@@ -66,11 +66,11 @@ router.post('/productinfo', function (req, res) {
   });
 });
 /* GET productrecipe. */
-router.post('/productinfo', function (req, res) {
+router.post('/productRecipe', function (req, res) {
   var getQuery = req.body;
   var productID = getQuery.productID;
   req.getConnection(function (err, connection) {
-    var query = connection.query('SELECT * from recipe INNER JOIN recipe_cat ON recipe_cat.recipe_cat_ID=recipe.recipe_cat_ID order by recipe.likes desc LIMIT 5', function (err, rows) {
+    var query = connection.query('Select * from recipe INNER JOIN recipe_cat where recipe.recipe_cat_ID = recipe_cat.recipe_cat_ID and recipe.recipe_ID IN (Select recipe_ingredient.recipe_ID FROM recipe_ingredient where recipe_ingredient.ingredient_ID IN (Select product.ingredient_ID from product where product.product_ID="'+productID+'"))', function (err, rows) {
     if (err)
       return err;
     res.send(rows);
@@ -78,5 +78,17 @@ router.post('/productinfo', function (req, res) {
   });
 });
 
+/* GET recipeIn. */
+router.post('/recipeIn', function (req, res) {
+  var getQuery = req.body;
+  var recipeID = getQuery.recipeID;
+  req.getConnection(function (err, connection) {
+    var query = connection.query('SELECT * FROM recipe_ingredient INNER JOIN ingredient where ingredient.ingredient_ID = recipe_ingredient.ingredient_ID and recipe_ingredient.recipe_ID="'+recipeID+'" order by squence_num;', function (err, rows) {
+    if (err)
+      return err;
+    res.send(rows);
+    });
+  });
+});
 
 module.exports = router;

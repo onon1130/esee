@@ -5,26 +5,3 @@
     a#recipe-like.active(href='#', data-product-id='') Most likes
     a#recipe-kcal(href='#', data-product-id='') Low Calories
   .section-content
-    ul.recipe-list
-      for row, index in recipeData 
-        li.recipe-list-item
-          a.recipe-image(href='#', data-recipe-id='#{row.recipe_ID}',style='background-image: url(../images/recipe/#{row.recipe_ID}.png);')
-          .recipe-cat #{row.recipe_cat_title}
-          .recipe-title 
-            a.title-name.btn-recipe-title(href='#', data-recipe-id='#{row.recipe_ID}') #{row.recipe_title}
-            span.btn-like
-              span.icon.icon-like.color
-              span #{row.likes}
-          .recipe-details
-            .recipe-details-item 
-              span.icon.icon-time
-              span #{row.duration}
-            .recipe-details-item
-              span.icon.icon-level
-              span #{row.level}
-            .recipe-details-item 
-              span.icon.icon-kcal
-              span #{row.engry_total}kcal
-            .recipe-details-item
-              span.icon.icon-price
-              span $--

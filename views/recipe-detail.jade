@@ -1,24 +1,30 @@
 
 #recipe-info
   .recipe-image
-    .recipe-cat na
-    .recipe-title 
-      .title-name.btn-recipe-title  na
-      span.btn-like
-        span.icon.icon-like.color
-        span.content na
+  .recipe-cat na
+  .recipe-title 
+    .title-name.btn-recipe-title  na
+    span.btn-like
+      span.icon.icon-like.color
+      span.content na
   
 .section-tab
-  a(href='#')
+  a.active.btn-recipe-in(href='#')
     span.recipe-details-item.time 
       span.icon.icon-time
       span.content na
     span.recipe-details-item.level
       span.icon.icon-level
       span.content na
-  a(href='#', data-product-id='')
+  a.btn-recipe-engry(href='#', data-product-id='')
     span.recipe-details-item.kcal 
       span.icon.icon-kcal
       span.content na kcal
-#recipe-ingredient-list
-
+#recipe-ingredient-step
+  .ingredient-list
+    .ingredient-title 
+      span.icon.icon-star
+      span.content Ingredient
+    .ingredient-content
+  .step-list
+#recipe-nutrition-list

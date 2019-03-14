@@ -192,6 +192,7 @@ function loadRecipePage(recipeID, selector) {
   var rTitle =$parentSelecor.find('.recipe-title').text();
   var like = $parentSelecor.find('.btn-like .content').text();
   var time = $parentSelecor.find('.time .content').text();
+  console.log('time:'+time);
   var level = $parentSelecor.find('.level .content').text();
   var kcal = $parentSelecor.find('.kcal .content').text();
   var $displayDetailWrapper = $('#recipe-detail').find('#recipe-info');
@@ -238,10 +239,10 @@ function loadRecipePage(recipeID, selector) {
       });
       tableContent += '</ul>';
 
-      $('#recipe-ingredient-list').html(tableContent);
+      $('#recipe-ingredient-step .ingredient-list .ingredient-content').html(tableContent);
     } else {
       console.log('no data');
-      $('#recipe-detail #recipe-ingredient-list').html('<span class="no-result">We are so sorry.<br /> Ingredient items can not be provided yet</span>');
+      $('#recipe-detail #recipe-ingredient-step .ingredient-list .ingredient-content').html('<span class="no-result">We are so sorry.<br /> Ingredient items can not be provided yet</span>');
     }
     $('#loading-wrapper').fadeOut(100);
     $('#recipe-detail').show();

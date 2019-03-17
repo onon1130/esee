@@ -7,6 +7,7 @@ var config = {
         db:       'esee'         // your database name
     },
     server: {
+        port2: 3001,
         port: 3000
     }
 };

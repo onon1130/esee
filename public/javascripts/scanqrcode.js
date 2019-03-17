@@ -29,6 +29,12 @@ function openQRCamera(node) {
     qrcode.decode(reader.result);
   };
   reader.readAsDataURL(node.files[0]);
+  window.setTimeout(function(){  
+    var productID =$('.qrcode-text').val();
+    loadProductPage(productID);
+//      alert($('.qrcode-text').val());
+  }, 300);
+
 }
 
 function showQRIntro() {

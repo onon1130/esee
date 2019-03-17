@@ -90,5 +90,28 @@ router.post('/recipeIn', function (req, res) {
     });
   });
 });
-
+/* GET recipeStep. */
+router.post('/recipeStep', function (req, res) {
+  var getQuery = req.body;
+  var recipeID = getQuery.recipeID;
+  req.getConnection(function (err, connection) {
+    var query = connection.query('SELECT instruction FROM recipe_step where recipe_ID="'+recipeID+'" order by step_ID asc;', function (err, rows) {
+    if (err)
+      return err;
+    res.send(rows);
+    });
+  });
+});
+/* GET recipeKcal. */
+router.post('/recipeKcal', function (req, res) {
+  var getQuery = req.body;
+  var recipeID = getQuery.recipeID;
+  req.getConnection(function (err, connection) {
+    var query = connection.query('SELECT nutrition_item.nutrition_ID, nutrition_item.nutrition_name, nutrition_item.nutrition_unit, nutrition.amount  FROM nutrition INNER JOIN nutrition_item where nutrition.nutrition_ID = nutrition_item.nutrition_ID and nutrition.recipe_ID = "'+recipeID+'";', function (err, rows) {
+    if (err)
+      return err;
+    res.send(rows);
+    });
+  });
+});
 module.exports = router;

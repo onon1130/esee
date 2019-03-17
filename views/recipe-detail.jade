@@ -3,11 +3,13 @@
   .recipe-image
   .recipe-cat na
   .recipe-title 
-    .title-name.btn-recipe-title  na
+    .title-name.recipe-detail-title  na
     span.btn-like
       span.icon.icon-like.color
       span.content na
-  
+  .recipe-serve
+    span Number of serve: 
+    span.content
 .section-tab
   a.active.btn-recipe-in(href='#')
     span.recipe-details-item.time 
@@ -22,9 +24,18 @@
       span.content na kcal
 #recipe-ingredient-step
   .ingredient-list
-    .ingredient-title 
+    .ingredient-step-title 
       span.icon.icon-star
       span.content Ingredient
     .ingredient-content
   .step-list
+    .ingredient-step-title
+      span.icon.icon-instrustion
+      span.content Direction
+    .step-content
 #recipe-nutrition-list
+  .nutrition-list
+    .ingredient-step-title 
+      span.icon.icon-list
+      span.content Nutrition
+    .nutrition-content

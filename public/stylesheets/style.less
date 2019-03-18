@@ -265,6 +265,9 @@ a {
   &.icon-list {
     background-image: url(../images/icon-list.png) ; 
   }
+  &.icon-shop {
+    background-image: url(../images/icon-shop.png) ; 
+  }
 }
 .footer {
   position: fixed;
@@ -276,7 +279,7 @@ a {
     border-width: 1px 0 0;*/
   height:80px;
   background: #fff;
-  box-shadow: 0px -5px 2px #ececec; 
+  box-shadow: 0 -1px 12px #888;
   .container {
     padding-top: 0;
     padding-bottom:0;
@@ -893,4 +896,20 @@ h1 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+#btn-shopping {
+  display: block;
+  border-radius: 50px;
+    background: #F8B601;
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+    height:40px;
+      width: 40px;
+       box-shadow: 0 2px 8px #888;
+    span.icon {
+      margin:0;
+      height:40px;
+      width: 40px;
+    }
 }

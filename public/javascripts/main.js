@@ -108,6 +108,8 @@ function loadProductPage(productID) {
   ;
   $('#loading-wrapper').fadeIn(100);
   $('#product-item-recipe-list #recipe .section-tab').hide();
+  $('.footer-menu').find('a').removeClass('active');
+  $('.footer-menu').find('a.menu-recipe').addClass('active');
 // Empty content string
   var $productContainer = $('#product-item-info');
   var tableContent = '';
@@ -181,6 +183,8 @@ function showHomepage() {
   }
   $('.nav-left-action').find('.btn-logout').show();
   $('.nav-left-action').find('.btn-back').hide();
+  $('.footer-menu').find('a').removeClass('active');
+  $('.footer-menu').find('a.menu-home').addClass('active');
 }
 function showProductPage() {
 
@@ -211,6 +215,8 @@ function loadRecipePage(recipeID, selector) {
   $displayTabWrapper.find('.kcal').find('.content').text(kcal);
   $('.nav-left-action').find('.btn-logout').hide();
   $('.nav-left-action').find('.btn-back').show().attr('data-back-fn', backto);
+  $('.footer-menu').find('a').removeClass('active');
+  $('.footer-menu').find('a.menu-recipe').addClass('active');
   if ($('#home-landing').css('display') === 'block') {
     $('#home-landing').hide("slide", {direction: "left"}, 300);
   }
